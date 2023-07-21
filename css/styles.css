@@ -922,7 +922,7 @@ input {
 .check-mark {
 }
 
-.checkbox-input:checked .check-mark {
+input:checked .check-mark {
   background-color: var(--pressed-state-color);
   border: none;
   fill: var(--light-color);
