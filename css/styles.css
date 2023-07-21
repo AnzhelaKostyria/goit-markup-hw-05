@@ -546,7 +546,7 @@ input {
   line-height: 1.5;
   letter-spacing: 0.04em;
   border-radius: 4px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--white-background);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: transparent;
   width: 264px;
@@ -592,6 +592,7 @@ input {
 
 .send-subscribe {
   fill: var(--white-background);
+  margin-left: 16px;
 }
 
 /*--------------------buttons-portfolio--------------------*/
@@ -811,11 +812,9 @@ input {
   line-height: 1.17;
   letter-spacing: 0.04em;
   position: relative;
+  margin-bottom: 4px;
 }
 
-.label-modal:not(:last-child) {
-  margin-bottom: 8px;
-}
 .label-modal::placeholder {
   color: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   font-family: inherit;
@@ -836,16 +835,16 @@ input {
   border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   padding-left: 38px;
   outline: transparent;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-modal:hover,
 .input-modal:focus {
   border: 1px solid var(--primary-brand-color);
 }
 
 .icon-modal {
+  fill: var(--dark-color);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -857,27 +856,32 @@ input {
   fill: var(--primary-brand-color);
 }
 
+.form-modal-container-textarea {
+  margin-bottom: 16px;
+}
+
 .modal-textarea {
   width: 100%;
   height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  background-color: transparent;
   border: none;
-  border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+  border: 1px solid rgba(46, 47, 66, 0.4);
   resize: none;
   padding: 8px 16px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-textarea:hover,
 .modal-textarea:focus {
-  border: 1px solid var(--primary-brand-color);
+  border-color: var(--primary-brand-color);
 }
 
 .checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
   margin-bottom: 24px;
 }
 
@@ -887,6 +891,41 @@ input {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+}
+
+.checkbox-span {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.checkbox-input {
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  border: none;
+  border: 1px solid var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+  padding: 8px 16px;
+  outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-mark {
+}
+
+.checkbox-input:checked .check-mark {
+  background-color: var(--pressed-state-color);
+  border: none;
+  fill: var(--light-color);
 }
 
 .link-checkbox {
@@ -904,15 +943,20 @@ input {
   border: none;
   padding: 16px 32px;
   border-radius: 4px;
-  background: var(--primary-brand-color);
+  background-color: var(--primary-brand-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--white-background);
-  width: 170px;
+  min-width: 169px;
   height: 56px;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
   margin: 0 auto;
   display: block;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .send-btn:hover,
